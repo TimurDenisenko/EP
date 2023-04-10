@@ -319,12 +319,58 @@ namespace EP
             //} while (vastus!="elevant");
 
 
-            int arv = rnd.Next(1, 10);
-            int parv = 0;
-            for (int i = 0; i < 5; i++)
+            //int arv = rnd.Next(1, 10);
+            //int parv = 0;
+            //int i = 0;
+            //Console.WriteLine(arv);
+            //for (i = 0; i < 5; i++)
+            //{
+            //    Console.WriteLine("Kirjuta arv (1-10)");
+            //    parv = int.Parse(Console.ReadLine());
+            //    if (parv == arv)
+            //    {
+            //        Console.WriteLine("See on õige");
+            //        break;
+            //    }
+            //}
+            //if (i==5 && parv!=arv)
+            //{
+            //    Console.WriteLine("Sa kaotasid!");
+            //}
+
+
+            //int[] lst = new int[4];
+            //int arv = 0;
+            //int c1 = 0;
+            //for (int i = 0; i < 4; i++)
+            //{
+            //    Console.WriteLine("Kirjuta {0} arv", i + 1);
+            //    do
+            //    {
+            //        arv = int.Parse(Console.ReadLine());
+            //        string c = arv.ToString();
+            //        c1 = c.Length;
+            //    } while (c1 > 1);
+            //    lst[i] = arv;
+            //}
+            //Array.Sort(lst);
+            //Array.Reverse(lst);
+            //string vastus = "";
+            //foreach (int item in lst)
+            //{
+            //    string num = item.ToString();
+            //    vastus += num;
+            //}
+            //Console.WriteLine("\n" + vastus);
+
+
+            for (int i = 1; i < 11; i++)
             {
-                Console.WriteLine("Kirjuta arv (1-10)");
-                parv=int.Parse(Console.ReadLine());
+                for (int i1 = 1; i1 < 11; i1++)
+                {
+                    Console.Write(i*i1+" ");
+                }
+                Console.WriteLine();
             }
 
 
