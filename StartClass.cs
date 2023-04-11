@@ -231,30 +231,30 @@ namespace EP
 
 
             //Console.WriteLine("Kas sa tahad osta piim?");
-            //string p = Console.ReadLine();
+            //string vas = Console.ReadLine();
             //float hindp = 0;
             //float hinds = 0;
             //float hindl = 0;
-            //if (p.ToLower()=="jah")
+            //if (vas.ToLower()=="jah")
             //{
             //    Console.WriteLine("Kui palju maksab piim?");
-            //    hindp = float.Parse(Console.ReadLine()); 
+            //    hindp = float.Parse(Console.ReadLine());
             //}
             //Console.WriteLine("Kas sa tahad osta sai?");
-            //string s = Console.ReadLine();
-            //if (s.ToLower()=="jah")
+            //vas = Console.ReadLine();
+            //if (vas.ToLower()=="jah")
             //{
             //    Console.WriteLine("Kui palju maksab sai?");
             //    hinds = float.Parse(Console.ReadLine());
             //}
             //Console.WriteLine("Kas sa tahad osta leib?");
-            //string l = Console.ReadLine();
-            //if (l.ToLower()=="jah")
+            //vas = Console.ReadLine();
+            //if (vas.ToLower()=="jah")
             //{
             //    Console.WriteLine("Kui palju maksab leib?");
             //    hindl = float.Parse(Console.ReadLine());
             //}
-            //Console.WriteLine("Summ on - {0}",hindp+hinds+hindl);
+            //Console.WriteLine("Summ on - {0}", hindp+hinds+hindl);
 
 
             //int N = rnd.Next(-100, 100);
@@ -361,19 +361,41 @@ namespace EP
             //    string num = item.ToString();
             //    vastus += num;
             //}
-            //Console.WriteLine("\n" + vastus);
+            //Console.WriteLine("\n{0}", Convert.ToInt32(vastus));
 
 
-            for (int i = 1; i < 11; i++)
-            {
-                for (int i1 = 1; i1 < 11; i1++)
-                {
-                    Console.Write(i*i1+" ");
-                }
-                Console.WriteLine();
-            }
+            //for (int i = 1; i < 11; i++)
+            //{
+            //    for (int i1 = 1; i1 < 11; i1++)
+            //    {
+            //        Console.Write(i*i1+" ");
+            //    }
+            //    Console.WriteLine();
+            //}
 
 
+            //string name = "T";
+            //AlamClass.Tere(name);
+
+
+            //int arv1 = 9;
+            //int arv2 = 3;
+            //int c = AlamClass.Korruta(arv1,arv2);
+            //Console.WriteLine(c);
+            //Console.WriteLine(AlamClass.Korruta(9, 3));
+
+            //Console.Write("N = ");
+            //int length = Convert.ToInt32(Console.ReadLine());
+            //int num=AlamClass.Middle(length);
+            //Console.WriteLine(num);
+
+            //AlamClass.Nurr(4,2, "+");
+
+
+            //Console.WriteLine(AlamClass.Stars(20));
+
+
+            AlamClass.NStars();
         }
     }
 }
