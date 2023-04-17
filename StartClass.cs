@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -395,7 +396,135 @@ namespace EP
             //Console.WriteLine(AlamClass.Stars(20));
 
 
-            AlamClass.NStars();
+            //AlamClass.NStars();
+
+
+            //ArrayList lst = new ArrayList();
+            //lst.Add("Esimene");
+            //lst.Add("Teine");
+            //lst.Add("Kolmas");
+            //if (lst.Contains("Teine"))
+            //{
+            //    Console.WriteLine(true);
+            //    Console.WriteLine("Asub kohal {0}",lst.IndexOf("Esimene")+1);
+            //}
+            //else
+            //{
+            //    Console.WriteLine(false);
+            //}
+            //Console.WriteLine("Kokku järjenids on {0} elemente",lst.Count);
+            //lst.Insert(3, "Neljas");
+            //lst.Insert(4, "Viies");
+            //lst.RemoveAt(0);
+            //lst.Remove("Viies");
+            //lst.Sort();
+            //foreach (string i in lst)
+            //{
+            //    Console.Write("{0}, ",i);   
+            //}
+            //Console.WriteLine();
+
+
+            //List<Inimene> list = new List<Inimene>();
+            //Inimene inimene = new Inimene();
+            //inimene.Nimi="Andrei";
+            //inimene.Vanus=37;
+            //list.Add(inimene);
+            //list.Add(new Inimene() {Vanus=29, Nimi="Luka"} );
+            //foreach (Inimene i in list )
+            //{
+            //    Console.WriteLine("{0} {1}",i.Nimi,i.Vanus);
+            //}
+
+
+            //Dictionary<int, string> dic = new Dictionary<int, string>(5);
+            //dic.Add(1,"üks");
+            //dic.Add(2, "kaks");
+            //dic[3]="kolm";
+            //dic[4]="neli";
+            //dic[5]="viis";
+            //foreach (KeyValuePair<int,string> keyValue in dic)
+            //{
+            //    Console.WriteLine("{0} {1}",keyValue.Key,keyValue.Value);
+            //}
+
+
+            //Dictionary<int,Inimene> dic = new Dictionary<int, Inimene>(5);
+            //dic.Add(1, new Inimene() {Nimi="Andrei",Vanus=37 });
+            //Inimene inimene = new Inimene();
+            //inimene.Nimi= "Nikolai";
+            //inimene.Vanus = 20;
+            //Inimene inimene1 = new Inimene();
+            //inimene1.Nimi = "Aleksander";
+            //inimene1.Vanus = 10;
+            //dic.Add(2,inimene);
+            //dic[4]=inimene1;
+            //foreach (KeyValuePair<int,Inimene> i in dic)
+            //{
+            //    Console.WriteLine("{0} - {1}.{2}",i.Key,i.Value.Nimi,i.Value.Vanus);
+            //}
+
+
+            //ConsoleKeyInfo nupp = new ConsoleKeyInfo();
+            //do
+            //{
+            //    Console.WriteLine("Vajuta Backspace");
+            //    nupp=Console.ReadKey();
+            //} while (nupp.Key!=ConsoleKey.Backspace);
+
+
+            //try
+            //{
+            //    StreamWriter text = new StreamWriter(@"..\..\..\TextFile.txt",true);
+            //    string lause = "Lisa failisse lause";
+            //    text.WriteLine(lause);
+            //    text.Close();
+            //}
+            //catch (Exception)
+            //{
+            //    Console.WriteLine("Viga!");
+            //}
+            //try
+            //{
+            //    StreamReader text = new StreamReader(@"..\..\..\TextFile.txt");
+            //    ArrayList list = new ArrayList();
+            //    string laused = "";
+            //    while (laused!=null)
+            //    {
+            //        laused = text.ReadLine();
+            //        list.Add(laused);
+            //    }
+            //    text.Close();
+            //    foreach (string item in list)
+            //    {
+            //        Console.WriteLine(item);
+            //    }
+            //}
+            //catch (Exception)
+            //{
+
+            //    Console.WriteLine("Viga!");
+            //}
+
+
+            StreamReader text = new StreamReader(@"..\..\..\maakond.txt");
+            Dictionary<string, string> mali = new Dictionary<string, string>();
+            string laused = "";
+            string[] t = new string[2];
+
+            while (laused!=null)
+            {
+                laused = text.ReadLine();
+                if (laused!=null)
+                t = laused.Split("-");
+                mali[t[0]] = t[1];
+            }
+            text.Close();
+
+            foreach (KeyValuePair<string,string> item in mali)
+            {
+                Console.WriteLine("{0}-{1}",item.Key,item.Value);
+            }
         }
     }
 }

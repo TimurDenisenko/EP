@@ -1,0 +1,55 @@
+
+Перейти к основному содержанию
+HTM Moodle
+
+    В начало
+    Личный кабинет
+    Мои курсы
+    Info
+
+    Kutsekoolid
+    Tallinna Tööstushariduskeskus
+    IT VALDKOND
+
+Programmeerimine (M. Oleinik)
+
+    Курс
+    Участники
+    Оценки
+    Компетенции
+
+Общий прогресс %
+8
+
+    bigbluebuttonbn icon
+    Видеоконференция BigBlueButton
+    BBB -Video tund Moodles- Видеоконференция BigBlueButton
+
+    Kui BBB ei tööta, siis kasutame https://meetingsemea10.webex.com/meet/marina.oleinik
+
+    forum icon
+    Форум
+    Õpimappid LOGITpv22 rühma Форум
+    Недоступно, пока не выполнено: Вы принадлежите к группе LOGITpv22
+    forum icon
+    Форум
+    Õpimappid TARpv22 rühma Форум
+
+    Matemaatiline loogika
+    Informatsiooni kodeerimine
+    Plokkprogrammeerimine Scratch ja Code.org
+    Sissejuhatus. Algoritm ja plokkskeem
+    Programmeerimise alused. Python
+    OOP printsiipid. C#
+    Töö andmebaasiga SQL abil
+    Model View Controller
+    ORM
+    Python Pygame
+
+Lisa failisse lause
+Lisa failisse lause
+Lisa failisse lause
+Lisa failisse lause
+Lisa failisse lause
+Lisa failisse lause
+Lisa failisse lause
