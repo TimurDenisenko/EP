@@ -506,24 +506,31 @@ namespace EP
             //    Console.WriteLine("Viga!");
             //}
 
-
-            StreamReader text = new StreamReader(@"..\..\..\maakond.txt");
-            Dictionary<string, string> mali = new Dictionary<string, string>();
-            string laused = "";
-            string[] t = new string[2];
-
-            while (laused!=null)
+            Dictionary<string,string> mali = func.FTLml(@"..\..\..\maakond.txt");
+            Dictionary<string, string> lima = func.FTLlm(@"..\..\..\maakond.txt");
+            string vali = "";
+            while (true)
             {
-                laused = text.ReadLine();
-                if (laused!=null)
-                t = laused.Split("-");
-                mali[t[0]] = t[1];
-            }
-            text.Close();
+                Console.WriteLine("1 - Leidke maakond või linn\n2 - Lisage uus maakond ja linn\n3 - Testi teadmised\n");
+                vali = Console.ReadLine();
+                switch (vali)
+                {
+                    case "1":
+                        func.Otsi(mali, lima);
 
-            foreach (KeyValuePair<string,string> item in mali)
-            {
-                Console.WriteLine("{0}-{1}",item.Key,item.Value);
+                        Console.WriteLine();
+                        break;
+                    case "2":
+                        func.Lisa(lima, mali);
+                        break;
+                    case "3":
+                        func.Train(lima, mali);
+                        break;
+                    default:
+                        break;
+                }
+                mali = func.FTLml(@"..\..\..\maakond.txt");
+                lima = func.FTLlm(@"..\..\..\maakond.txt");
             }
         }
     }
