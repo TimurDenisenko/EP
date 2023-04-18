@@ -4,12 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace EP
 {
     public class func
     {
-        public static Dictionary<string,string> FTLlm(string file)
+        public static Dictionary<string, string> FTLlm(string file)
         {
             StreamReader text = new StreamReader(file);
             Dictionary<string, string> lima = new Dictionary<string, string>();
@@ -40,7 +41,7 @@ namespace EP
         }
 
 
-        public static void Otsi(Dictionary<string,string> mali, Dictionary<string, string> lima)
+        public static void Otsi(Dictionary<string, string> mali, Dictionary<string, string> lima)
         {
             Console.WriteLine("Mida sa otsid?");
             string sona = Console.ReadLine();
@@ -106,7 +107,7 @@ namespace EP
             double lose = 0;
             ArrayList vastused = new ArrayList();
             ArrayList list = new ArrayList();
-            foreach (KeyValuePair<string,string> item in lima)
+            foreach (KeyValuePair<string, string> item in lima)
             {
                 list.Add(item.Key);
                 list.Add(item.Value);
@@ -125,7 +126,7 @@ namespace EP
                 {
                     vastus = mali[sona];
                 }
-                Console.WriteLine("Mängu number {0}",o+1);
+                Console.WriteLine("Mängu number {0}", o+1);
                 for (int i = 0; i < 3; i++)
                 {
                     Console.WriteLine("{0} - ?", sona);
@@ -149,7 +150,39 @@ namespace EP
                 Console.WriteLine();
                 vastused.Add(sona);
             }
-            Console.WriteLine("Võitude arv: {0}\nVõitude protsent: {1}%\nKahjude arv: {2}\nKaotuse protsent: {3}%",win,win/4*100,lose,lose/4*100);
+            Console.WriteLine("Võitude arv: {0}\nVõitude protsent: {1}%\nKahjude arv: {2}\nKaotuse protsent: {3}%", win, win/4*100, lose, lose/4*100);
+        }
+
+
+        public static void Parandada(Dictionary<string, string> lima, Dictionary<string, string> mali)
+        {
+            string a = "";
+            string ob = "";
+            string ob1 = "";
+            do
+            {
+                Console.WriteLine("Kirjutage parandatav objekt");
+                a = Console.ReadLine();
+            } while (lima.ContainsKey(a)==false && mali.ContainsKey(a)==false);
+
+            if (lima.ContainsKey(a))
+            {
+                Console.WriteLine("Kirjutage õige versioon");
+                ob = Console.ReadLine();
+                Console.WriteLine("Kirjutage objekti linn või maakond");
+                ob1 = Console.ReadLine();
+                lima.Remove(a);
+                lima[ob] = ob1;
+            }
+            else if (mali.ContainsKey(a))
+            {
+
+                Console.WriteLine("Kirjutage õige versioon");
+                ob = Console.ReadLine();
+                mali.Remove(a);
+                mali[ob] = ob1;
+            }
+            LTF(lima, @"..\..\..\maakond.txt");
         }
     }
 }

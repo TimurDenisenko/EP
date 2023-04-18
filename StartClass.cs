@@ -506,31 +506,144 @@ namespace EP
             //    Console.WriteLine("Viga!");
             //}
 
-            Dictionary<string,string> mali = func.FTLml(@"..\..\..\maakond.txt");
-            Dictionary<string, string> lima = func.FTLlm(@"..\..\..\maakond.txt");
-            string vali = "";
-            while (true)
-            {
-                Console.WriteLine("1 - Leidke maakond või linn\n2 - Lisage uus maakond ja linn\n3 - Testi teadmised\n");
-                vali = Console.ReadLine();
-                switch (vali)
-                {
-                    case "1":
-                        func.Otsi(mali, lima);
 
-                        Console.WriteLine();
-                        break;
-                    case "2":
-                        func.Lisa(lima, mali);
-                        break;
-                    case "3":
-                        func.Train(lima, mali);
-                        break;
-                    default:
-                        break;
-                }
-                mali = func.FTLml(@"..\..\..\maakond.txt");
-                lima = func.FTLlm(@"..\..\..\maakond.txt");
+            //Dictionary<string, string> mali= func.FTLml(@"..\..\..\maakond.txt");
+            //Dictionary<string, string> lima = func.FTLlm(@"..\..\..\maakond.txt");
+            //string vali = "";
+            //while (true)
+            //{
+            //    Console.WriteLine("1 - Leidke maakond või linn\n2 - Lisage uus maakond ja linn\n3 - Testi teadmised\n4 - Maakonna või linna vahetus");
+            //    vali = Console.ReadLine();
+            //    switch (vali)
+            //    {
+            //        case "1":
+            //            func.Otsi(mali, lima);
+            //            Console.WriteLine();
+            //            break;
+            //        case "2":
+            //            func.Lisa(lima, mali);
+            //            break;
+            //        case "3":
+            //            func.Train(lima, mali);
+            //            break;
+            //        case "4":
+            //            func.Parandada(lima,mali);
+            //            break;
+            //        default:
+            //            break;
+            //    }
+            //    mali = func.FTLml(@"..\..\..\maakond.txt");
+            //    lima = func.FTLlm(@"..\..\..\maakond.txt");
+            //}
+
+
+            //List<int> list = new List<int>();
+            //List<int> list1 = new List<int>();
+            //for (int i = 0; i < rnd.Next(3, 20); i++)
+            //{
+            //    int a = rnd.Next(1, 100);
+            //    list.Add(a);
+            //}
+            //foreach (int i in list)
+            //{
+            //    Console.Write(i+" ");
+            //}
+            //list.Insert(0, list[list.Count-1]);
+            //list.Insert(list.Count, list[1]);
+            //Console.WriteLine();
+            //for (int i = 1; i < list.Count - 1; i++)
+            //{
+            //    list1.Insert(i-1, list[i-1]+list[i+1]);
+            //}
+            //foreach (int i in list1)
+            //{
+            //    Console.Write(i+" ");
+            //}
+
+
+            //List<int> list = new List<int>();
+            //List<int> list1 = new List<int>();
+            //for (int i = 0; i < 20; i++)
+            //{
+            //    int a = rnd.Next(1, 100);
+            //    list.Add(a);
+            //}
+            //foreach (int i in list)
+            //{
+            //    Console.Write(i+" ");
+            //}
+            //Console.WriteLine();
+            //foreach (int i in list)
+            //{
+            //    if (i%2==0)
+            //    {
+            //        list1.Add(i); 
+            //    }
+            //}
+            //foreach (int i in list)
+            //{
+            //    if (i%2!=0)
+            //    {
+            //        list1.Add(i);
+            //    }
+            //}
+            //foreach (int i in list1)
+            //{
+            //    Console.Write(i+" ");
+            //}
+
+
+            string sugu;
+            double b;
+            string x;
+            int kal = 0;
+            int i = 1;
+            string myf;
+            ArrayList fructs = new ArrayList() {"Laim", "Sidrun","Arbuus", "Oranž","Aprikoos","Ananass","Banaan","Avokaado",};
+            ArrayList fructsk = new ArrayList() {16, 16, 25, 36, 44, 49, 95, 212 };
+            do
+            {
+                Console.WriteLine("Kas sa oled mees või naine?");
+                sugu = Console.ReadLine();
+            } while (sugu!="mees" && sugu!="naine");
+            Console.WriteLine("Kui palju te kaalute?");
+            double kg = double.Parse(Console.ReadLine());
+            Console.WriteLine("Kui pikk sa oled?");
+            double sm = double.Parse(Console.ReadLine());
+            Console.WriteLine("Kui vana sa oled?");
+            int year = int.Parse(Console.ReadLine());
+            if (sugu=="mees")
+            {
+                b = 66 + (13.7 * kg) + (5 * sm) - (6.8 * year);
+            }
+            else
+            {
+                b = 655 + (9.6 * kg) + (1.8 * sm) - (4.7 * year);
+            }
+            do
+            {
+                Console.WriteLine(@"Elustiil:
+1 - Passiivne elustiil
+2 - Vähe tegevust
+3 - Mõõdukas aktiivsus
+4 - Kõrge aktiivsus
+5 - Väga kõrge aktiivsus");
+                x= Console.ReadLine();
+                Console.WriteLine();
+            } while (x!="1" && x!="2" && x!="3" && x!="4" && x!="5");
+            switch (x)
+            {
+                case "1": b = b * 1.2; break;
+                case "2": b = b * 1.375; break;
+                case "3": b = b * 1.55; break;
+                case "4": b = b * 1.725; break;
+                case "5": b = b * 1.9; break;
+                default: break;
+            }
+            while (kal<b)
+            {
+                kal+=(int)fructsk[i];
+                myf+=(string)fructs[i];
             }
         }
     }
